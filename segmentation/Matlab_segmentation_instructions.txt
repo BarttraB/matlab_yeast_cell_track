@@ -1,0 +1,8 @@
+Segmentation Analysis Protocol 
+
+1. put all phase images into a 'c1' folder (if necessary), and make a folder 'masks' in the same directory as 'c1'
+
+2. open mask_maker4_2.m to edit. On line 16 you must change the input directory to your ‘c1’ directory that you made in step 1. On line 61 change the output directory to your ‘masks’ directory. You should also change nframes (on line 3) to the number of frames/images that you want it to analyze.
+
+3. open matlab and run mask_maker4_2.m. When it is done take a look at your output in the ‘masks’ directory to check if the segmentation worked. If it absolutely unaceptable (most cells clumped or disappeared) try changing the numbers to the right of 'disk' on lines 27,28, or 38.
+

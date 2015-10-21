@@ -1,0 +1,17 @@
+Tracking Analysis Protocol 
+
+1. before using the code for the first time, you will need to recompile the mexModWillsMetric.c into a Matlab .mex file. To do this go start matlab and in the directory where that file is type the command >mex mexModWillsMetric.c  
+If this fails you'll likely need to google around and figure out which c compiler to install that is compatible with your version of matlab. 
+
+2. open cell_tracking_nogui_BBexpt12.m to edit. Make an output directory where your results will be stored. Modify lines 15-27 to point the program to the correct directories. Lines 29-34 should be adjusted to the properties of your image acquisition (see comments in code for explanation of what each parameter means). 
+You can also change the minimal length of trajectories that are stored, cutoffL on line 73. At the moment cutoffL = 400 meaning that all trajectories that are less than 400 frames long will be thrown out.  
+
+
+3. run the code  cell_tracking_nogui_BBexpt12.m and be patient. :)  It will output images of what cell is what object in each frame, called , CompositeColorXX.tif, in your output directory). Look through these and see if at least some cells are being tracked. If not, then you can either: change the segmentation parameters to make better masks (see segmentation instructions), or change the parameters like parameters.AvCellBox=31; %for 60X on line 90 ov getParameters_v5.m-or the scoring parameters on the lines below 90. 
+
+
+4. the trajectories of objects are written to the file output_trajs_XXX.mat. The most important variable here is FluorTraj, which for each trajectory contains the times, object number, fluorescence {Mean, Local Mean, Area,  Standard deviation (Std),  MeanTop50, AreaTop50, StdTop50, MeanTop25(clrn), AreaTop25, StdTop25}. You will likely just want the time and fluorescence mean. 
+
+5. As for plotting the fluorescence trajectories in Matlab I have included an example code, plotter_expt12.m,  with some sample output figures in the 'expt12_aug8_2014_Ti2/begin001/plots' folder. 
+
+

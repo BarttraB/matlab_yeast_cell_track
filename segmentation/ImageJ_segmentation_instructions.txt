@@ -1,0 +1,20 @@
+
+
+1. threshold ( "Image" -> "Adjust" )
+
+2. binary, convert to mask  (then you can cut the unnecessary regions)   ("Process" -> "Binary")
+
+3. invert   ("Process" -> "Binary") (Edit > Invert)
+
+4. watershed  ("Process" -> "Binary")
+
+5. tracking particle ->  show in ellipses   ("Analyze")
+
+6. invert  ("Edit")
+
+7. erode  ("Process" -> "Binary")
+
+8. tracking particle -> show in mask  ("Analyze")
+
+
+always save mask  images with 'mask_' in their names.
